@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#623c16">
+  <title>Siargao! - Island Paradise</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            island: {
+              50:"#fdf8ec",100:"#faefd3",200:"#f3d99e",
+              300:"#ebd15e",400:"#e5b83b",500:"#d49b1a",
+              600:"#b27814",700:"#8f5a13",800:"#754716",
+              900:"#623c16",950:"#39200b"
+            },
+            fiesta: {
+              pink:"#ff2a75",gold:"#ffd700",cyan:"#00f0ff",
+              orange:"#ff7700",purple:"#9d4edd",sky:"#00b4d8"
+            }
+          },
+          fontFamily: {
+            sans:["Poppins","sans-serif"],
+            serif:["Playfair Display","serif"],
+            fun:["Pacifico","cursive"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="JAVASCRIPT/script.js" defer></script>
+</head>
+
+<body class="bg-island-50 text-gray-800 font-sans antialiased overflow-x-hidden">
+
+  <audio id="audio1" preload="metadata" loop>
+    <source src="AUDIO/sayaw.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="audio2" preload="metadata" loop>
+    <source src="AUDIO/14.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="audio3" preload="metadata" loop>
+    <source src="AUDIO/piliin.mp3" type="audio/mpeg">
+  </audio>
+
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-island-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <a href="#home" class="flex items-center gap-3">
+          <div class="logo-icon">
+            <i class="fa-solid fa-water"></i>
+          </div>
+          <div>
+            <span class="text-2xl font-bold font-fun text-transparent bg-clip-text bg-gradient-to-r from-fiesta-orange via-fiesta-pink to-fiesta-sky">Siargao!</span>
+            <span class="block text-[10px] tracking-widest uppercase text-island-700 font-semibold">Teardrop Island Paradise</span>
+          </div>
+        </a>
+
+        <div class="hidden xl:flex items-center text-xs font-semibold uppercase">
+          <a href="#home" class="nav-link">1. Home</a>
+          <a href="#player-section" class="nav-link">2. Boombox</a>
+          <a href="#about" class="nav-link">3. About</a>
+          <a href="#attractions" class="nav-link">4. Spots</a>
+          <a href="#food" class="nav-link">5. Food</a>
+          <a href="#guide" class="nav-link">6. Guide</a>
+          <a href="#accommodations" class="nav-link">7. Stays</a>
+          <a href="#video" class="nav-link">8. Video</a>
+          <a href="#contact" class="nav-link">9. Contact</a>
+        </div>
+
+        <button id="menuButton" class="xl:hidden menu-button"
+          type="button" aria-label="Open navigation" aria-expanded="false"
+          aria-controls="mobileMenu">
+          <i id="menuIcon" class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="hidden xl:hidden bg-island-100 border-t border-island-200 px-4 pt-3 pb-6 space-y-2">
+      <a href="#home" class="mobile-link">1. Home</a>
+      <a href="#player-section" class="mobile-link">2. Boombox Player</a>
+      <a href="#about" class="mobile-link">3. About Siargao</a>
+      <a href="#attractions" class="mobile-link">4. Island Spots</a>
+      <a href="#food" class="mobile-link">5. Food & Feasts</a>
+      <a href="#guide" class="mobile-link">6. Visitor Guide</a>
+      <a href="#accommodations" class="mobile-link">7. Resorts & Stays</a>
+      <a href="#video" class="mobile-link">8. Video</a>
+      <a href="#contact" class="mobile-link">9. Contact</a>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home" class="hero-section relative min-h-screen flex items-center pt-28 pb-20">
+    <div class="absolute inset-0">
+      <img src="IMAGES/hero.jpg" alt="Siargao Island"
+        class="w-full h-full object-cover">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-r from-island-950/90 via-island-950/75 to-island-950/80"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="max-w-3xl space-y-6 text-center lg:text-left">
+        <span class="inline-block bg-island-950/80 border border-fiesta-gold px-4 py-2 rounded-full text-xs font-bold text-fiesta-gold">
+          ☀️ Mabuhay! Welcome to Siargao
+        </span>
+
+        <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black font-serif text-white leading-none">
+          Siargao<span class="text-fiesta-pink">!</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-gray-200 leading-relaxed max-w-2xl">
+          Discover the ultimate Philippine island escape. Experience world-class
+          surf breaks, breathtaking lagoons, coconut palm highways, and vibrant
+          Filipino culture.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 pt-2 justify-center lg:justify-start">
+          <a href="#player-section" class="primary-button">
+            <i class="fa-solid fa-music mr-2"></i> Open Island Boombox
+          </a>
+          <a href="#attractions" class="secondary-button">
+            Explore Must-See Spots →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="player-section" class="py-16 bg-island-100 border-y border-island-200">
+    <div class="max-w-3xl mx-auto px-4 text-center space-y-6">
+      <span class="section-pill">Interactive Audio Hub</span>
+      <h2 class="section-heading">Vibe with Siargao Beats</h2>
+      <p class="text-gray-600">Play, pause, change songs, and control the volume.</p>
+
+      <div class="retro-boombox p-5 sm:p-8 rounded-3xl max-w-xl mx-auto">
+        <div class="radio-display mb-6">
+          <div class="flex justify-between text-[10px] text-fiesta-gold font-mono mb-2">
+            <span>FM 88</span><span>92</span><span>96</span>
+            <span>100</span><span>104</span><span>108 MHz</span>
+          </div>
+          <div class="h-2 bg-gray-800 rounded overflow-hidden">
+            <div class="h-full w-1/3 bg-fiesta-pink"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-2 sm:gap-4 items-center">
+          <div class="speaker"><div class="speaker-center"></div></div>
+
+          <div class="boombox-screen min-w-0">
+            <span class="block text-[9px] text-fiesta-gold uppercase tracking-widest font-bold">Now Playing</span>
+            <span id="trackStatus" class="block text-xs text-white font-mono font-bold my-2 break-words" aria-live="polite">Track 1: Island Vibes</span>
+
+            <div class="flex items-center justify-center gap-2">
+              <button id="prevButton" class="control-button" type="button" aria-label="Previous track" title="Previous track">
+                <i class="fa-solid fa-backward-step"></i>
+              </button>
+              <button id="playButton" class="play-button" type="button" aria-label="Play music" title="Play">
+                <i id="playIcon" class="fa-solid fa-play"></i>
+              </button>
+              <button id="nextButton" class="control-button" type="button" aria-label="Next track" title="Next track">
+                <i class="fa-solid fa-forward-step"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="speaker"><div class="speaker-center"></div></div>
+        </div>
+
+        <div class="mt-6 space-y-4">
+          <div class="flex items-center justify-between gap-3 text-xs text-fiesta-gold">
+            <label for="trackSelect">Choose song</label>
+            <select id="trackSelect" class="track-select">
+              <option value="0">Track 1 — Island Vibes</option>
+              <option value="1">Track 2 — Tropical Dreams</option>
+              <option value="2">Track 3 — Fiesta Time</option>
+            </select>
+          </div>
+
+          <div class="flex items-center gap-3 text-xs text-fiesta-gold">
+            <i class="fa-solid fa-volume-low"></i>
+            <label for="volumeSlider" class="sr-only">Volume</label>
+            <input id="volumeSlider" type="range" min="0" max="1" step="0.05" value="0.3" class="volume-slider">
+            <span id="volumeText" class="w-10 text-right">30%</span>
+          </div>
+
+          <p id="audioMessage" class="text-xs text-amber-100" role="status">
+            Add your songs to the AUDIO folder, then press play.
+          </p>
+          <span class="block text-center text-[10px] tracking-widest text-fiesta-gold uppercase">Siargao Hi-Fi Sound System</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-intro">
+        <span class="section-pill">The Teardrop Isle</span>
+        <h2 class="section-heading">About Siargao Island</h2>
+        <p class="text-gray-600">A beautiful island in Surigao del Norte known for its surf breaks, mangroves, lagoons, and welcoming local communities.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <article class="glass-card">
+          <div class="bamboo-coconut-frame"><img src="IMAGES/surfing.jpg" alt="Surfing" class="card-image"></div>
+          <h3 class="card-title">World-Class Surf Breaks</h3>
+          <p class="card-text">Visit Cloud 9 and discover why surfers from around the world travel to Siargao for its famous waves.</p>
+        </article>
+
+        <article class="glass-card">
+          <div class="bamboo-coconut-frame"><img src="IMAGES/lagoon.jpg" alt="Lush lagoon" class="card-image"></div>
+          <h3 class="card-title">Lush Mangroves & Lagoons</h3>
+          <p class="card-text">Explore the island's natural beauty, from peaceful lagoons to mangrove forests and clear waters.</p>
+        </article>
+
+        <article class="glass-card">
+          <div class="bamboo-coconut-frame"><img src="IMAGES/culture.jpg" alt="Island culture" class="card-image"></div>
+          <h3 class="card-title">Warm Filipino Culture</h3>
+          <p class="card-text">Experience local traditions, coastal fiestas, Filipino hospitality, and community life.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="attractions" class="py-24 bg-island-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-intro">
+        <span class="section-pill">Must-Visit Spots</span>
+        <h2 class="section-heading">Iconic Siargao Attractions</h2>
+        <p class="text-gray-600">Discover some of the island's most popular destinations.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <article class="glass-card">
+          <div class="bamboo-coconut-frame"><img src="IMAGES/cloud9.jpg" alt="Cloud 9" class="card-image"></div>
+          <h3 class="card-title">Cloud 9 Boardwalk & Pier</h3>
+          <p class="card-text">Walk along the famous pier, watch surfers ride the waves, and enjoy the ocean scenery.</p>
+          <p class="location-text"><i class="fa-solid fa-location-dot mr-1"></i> General Luna</p>
+        </article>
+
+        <article class="glass-card">
+          <div class="bamboo-coconut-frame"><img src="IMAGES/sugba.jpg" alt="Sugba Lagoon" class="card-image"></div>
+          <h3 class="card-title">Sugba Lagoon</h3>
+          <p class="card-text">Enjoy beautiful waters, kayaking, and paddleboarding in a peaceful natural setting.</p>
+          <p class="location-text"><i class="fa-solid fa-location-dot mr-1"></i> Del Carmen</p>
+        </article>
+
+        <article class="glass-card">
+          <div class="bamboo-coconut-frame"><img src="IMAGES/magpupungko.jpg" alt="Magpupungko rock pools" class="card-image"></div>
+          <h3 class="card-title">Magpupungko Rock Pools</h3>
+          <p class="card-text">Visit the natural tidal pools during suitable low tide. Check sea conditions before swimming.</p>
+          <p class="location-text"><i class="fa-solid fa-location-dot mr-1"></i> Pilar</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="food" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-intro">
+        <span class="section-pill">Island Flavors</span>
+        <h2 class="section-heading">Siargao Food & Seafood Feasts</h2>
+        <p class="text-gray-600">Taste fresh seafood, tropical fruits, and Filipino favorites.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <article class="glass-card">
+          <div class="bamboo-coconut-frame"><img src="IMAGES/seafood.jpg" alt="Seafood barbecue" class="card-image"></div>
+          <h3 class="card-title">🐟 Fresh Catch Seafood BBQ</h3>
+          <p class="card-text">Enjoy grilled fish and seafood, often served with calamansi, soy sauce, and chili.</p>
+        </article>
+
+        <article class="glass-card">
+          <div class="bamboo-coconut-frame"><img src="IMAGES/smoothie.jpg" alt="Tropical smoothie bowl" class="card-image"></div>
+          <h3 class="card-title">🥥 Tropical Smoothie Bowls</h3>
+          <p class="card-text">Try refreshing fruit bowls with mango, bananas, coconut, and other tropical toppings.</p>
+        </article>
+
+        <article class="glass-card">
+          <div class="bamboo-coconut-frame"><img src="IMAGES/filipino-food.jpg" alt="Filipino food" class="card-image"></div>
+          <h3 class="card-title">🌿 Sinuglaw & Boodle Fights</h3>
+          <p class="card-text">Share Filipino dishes and enjoy traditional flavors with friends and family.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide" class="py-24 bg-island-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-intro">
+        <span class="section-pill">Traveler Tips</span>
+        <h2 class="section-heading">Visitor Guide & FAQ</h2>
+        <p class="text-gray-600">A few things to consider before your island adventure.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <article class="guide-card">
+          <h3><i class="fa-solid fa-plane text-fiesta-sky mr-2"></i> How to Get There?</h3>
+          <p>Check available flights to Sayak Airport (IAO) and arrange transport to your accommodation. Confirm schedules before travelling.</p>
+        </article>
+        <article class="guide-card">
+          <h3><i class="fa-solid fa-motorcycle text-fiesta-orange mr-2"></i> Getting Around</h3>
+          <p>Local tricycles and scooters are common options. Follow road rules, wear a helmet, and confirm fares in advance.</p>
+        </article>
+        <article class="guide-card">
+          <h3><i class="fa-solid fa-cloud-sun text-fiesta-orange mr-2"></i> When to Visit?</h3>
+          <p>Weather and surf conditions change throughout the year. Check forecasts and local advisories before activities.</p>
+        </article>
+        <article class="guide-card">
+          <h3><i class="fa-solid fa-leaf text-fiesta-sky mr-2"></i> Travel Responsibly</h3>
+          <p>Respect local communities, follow guide instructions, protect wildlife, and take your rubbish with you.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="accommodations" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-intro">
+        <span class="section-pill">Rest & Recharge</span>
+        <h2 class="section-heading">Resorts & Island Stays</h2>
+        <p class="text-gray-600">Choose accommodation that suits your travel style and budget.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <article class="glass-card">
+          <i class="fa-solid fa-people-group feature-icon"></i>
+          <h3 class="card-title">Social Hostels</h3>
+          <p class="card-text">A social option for meeting fellow travellers and joining group activities.</p>
+        </article>
+        <article class="glass-card">
+          <i class="fa-solid fa-umbrella-beach feature-icon"></i>
+          <h3 class="card-title">Beachside Resorts</h3>
+          <p class="card-text">Relax near the coast and enjoy easy access to scenic island views.</p>
+        </article>
+        <article class="glass-card">
+          <i class="fa-solid fa-house feature-icon"></i>
+          <h3 class="card-title">Guesthouses & Villas</h3>
+          <p class="card-text">Consider a quieter stay for families, couples, or longer visits.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="video" class="py-24 bg-island-100">
+    <div class="max-w-5xl mx-auto px-4 text-center space-y-6">
+      <span class="section-pill">Island Cinematic Experience</span>
+      <h2 class="section-heading">Watch Siargao in Action</h2>
+      <p class="text-gray-600">Add your video file to the VIDEO folder using the filename below.</p>
+
+      <div class="glass-card">
+        <div class="bamboo-coconut-frame">
+          <video controls preload="metadata" playsinline class="local-video">
+            <source src="VIDEO/video1.mp4" type="video/mp4">
+            Your browser does not support video. Add VIDEO/Siargao.mp4 to your website.
+          </video>
+        </div>
+        <p class="text-sm text-gray-600 mt-4">Video placeholder: <code>VIDEO/Siargao.mp4</code></p>
+        <a class="external-link" href="https://www.youtube.com/results?search_query=Siargao+Philippines+cinematic" target="_blank" rel="noopener noreferrer">Find Siargao videos on YouTube ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center space-y-4">
+      <span class="section-pill">Stay Connected</span>
+      <h2 class="section-heading">Plan Your Island Adventure</h2>
+      <p class="text-gray-600">Learn more about travelling in the Philippines and plan a responsible visit to Siargao.</p>
+      <a href="https://philippines.travel/" target="_blank" rel="noopener noreferrer" class="primary-button inline-flex">
+        <i class="fa-solid fa-compass mr-2"></i> Explore Philippine Travel
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-island-950 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 text-center space-y-4">
+      <span class="text-2xl font-bold font-fun text-transparent bg-clip-text bg-gradient-to-r from-fiesta-orange via-fiesta-pink to-fiesta-sky">Siargao!</span>
+      <p class="text-xs text-gray-400">© 2026 Siargao Island Paradise & Cultural Festival Celebration.</p>
+      <a href="#home" class="text-xs text-fiesta-gold hover:underline">Back to top ↑</a>
+    </div>
+  </footer>
+
+</body>
+</html>
